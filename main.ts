@@ -4,19 +4,35 @@ import {
   poweredBy,
   serveStatic,
   // html,
-} from 'https://deno.land/x/hono@v3.3.0/middleware.ts'
+} from 'https://deno.land/x/hono@v3.4.1/middleware.ts'
 const app = new Hono()
 app.use('*', logger(), poweredBy())
-app.all('/favicon.ico', serveStatic({ path: './public/favicon.ico' }))
+// app.use('/public/*', serveStatic({ root: './' }))
+// app.use('/favicon.ico', serveStatic({ path: './public/favicon.ico' }))
+
+// app.all('/favicon.ico', serveStatic({ path: './public/favicon.ico' }))
+app.all('/favicon.ico', serveStatic({ path: './favicon.ico' }))
+
 const title = 'temp title'
 
 const layout = `<!DOCTYPE html>
   <html>
     <head>
       <title>${title}</title>
+          <script src="https://unpkg.com/htmx.org@1.9.6"
+      integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+      crossorigin="anonymous"></script>
     </head>
     <body>
       <h1>${title}</h1>
+      <div>
+          <div id="response-div">
+            <button hx-get="/test" hx-target="#response-div" hx-swap="outerHTML">
+                Register!
+            </button>
+          </div>
+      </div>
+
     </body>
   </html>`
 
