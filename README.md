@@ -1,11 +1,8 @@
-# Hono Deno REST API Template
+# Hono
+Hono - [炎] means flame🔥 in Japanese - is a small, simple, and ultrafast web framework for the Edges. It works on any JavaScript runtime: Cloudflare Workers, Fastly Compute@Edge, Deno, Bun, Vercel, Netlify, Lagon, AWS Lambda, Lambda@Edge, and Node.js.
 
-A template of REST API app using [Hono](https://hono.dev/) framework
+Fast, but not only fast.
 
-```
-deno run --allow-net main.ts
-```
+Hono Fast 🔥
 
-This starts the server at http://localhost:8000/
-
-Try go to http://localhost:8000/api/Brachiosaurus or http://localhost:8000/api/
+`deno run --allow-net main.ts`
