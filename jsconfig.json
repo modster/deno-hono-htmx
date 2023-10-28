@@ -6,5 +6,7 @@
     "esModuleInterop": true,
     "strict": true,
     "lib": ["esnext"]
+    "checkJs": true
+
   }
 }
