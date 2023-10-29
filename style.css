@@ -1,17 +1,57 @@
 body{
   background-color: #311111;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 3em;
   line-height: 1.5;
-  color: #333;
+  color: #ffffff;
 }
-
-
 
 h1 {
-  obliquw-angle: 45deg;
-  font-size: 3em;
-  background-image: linear-gradient(to top, #510505 0%, #dfd80c 100%);
+  background-image: linear-gradient(to top, #2d0101 0%, #f7f150 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+    text-shadow:
+      1px 1px 0.1px black,
+      0 0 0.1em blue,
+      0 0 0.2em blue;
+    color: black;
+
+    /* padding: 20px; */
+    /* box-shadow:
+      inset 0 -3em 3em rgba(0, 200, 0, 0.1),
+      0 0 0 1px #811d1d,
+      0.3em 0.3em 1em rgba(200, 0, 0, 0.1); */
+  }
 }
+.bg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(70deg, #076423 0%, yellow 25%, #bfa4df 51%, #ff357f 100%);
+  -webkit-animation: AnimateBG 20s ease infinite;/
+          animation: AnimateBG 20s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {

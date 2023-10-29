@@ -28,10 +28,10 @@ app.get("/", (c) => {
        </head>
      <body>
          
-       <div style="text-align: center;">
+       <div class="bg">
            <div id="response-div">
              <h1>Hono HTMX Demo</h1>
-               <button hx-post="/" hx-target="#response-div" hx-swap="outerHTML">
+               <button hx-post="/api" hx-target="#response-div" hx-swap="outerHTML">
                     Click Me
                 </button>
            </div>
@@ -42,7 +42,17 @@ app.get("/", (c) => {
   `);
 });
 
-app.post("/", (c) => {
+app.post("/api", (c) => {
+  return c.html(html`<div id="response-div">
+        <h1>Blazingly Fast</h1>
+      <button hx-get="/api" hx-target="#response-div" hx-swap="outerHTML">
+           Click Me
+       </button>
+           </div>
+        </div>`);
+});
+
+app.get("/api", (c) => {
   return c.html(html`<div id="response-div">
         <h1>Blazingly Fast</h1>
       <button hx-post="/" hx-target="#response-div" hx-swap="outerHTML">
@@ -51,6 +61,7 @@ app.post("/", (c) => {
            </div>
         </div>`);
 });
+
 app.notFound((c) => {
   return c.text("Custom 404 Message", 404);
 });
