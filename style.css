@@ -9,8 +9,9 @@ body{
 
 
 h1 {
+  obliquw-angle: 45deg;
   font-size: 3em;
-  background-image: linear-gradient(to top, #e30202 0%, #f7f150 100%);
+  background-image: linear-gradient(to top, #510505 0%, #dfd80c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
